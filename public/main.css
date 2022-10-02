@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&family=Roboto:wght@300&display=swap");
+
+body {
+  outline: 0;
+  margin: 0;
+  background-color: white;
+}
+
+h1 {
+  color: #9f4cc4;
+  font-size: 10rem;
+  font-family: poppins;
+  font-weight: 700;
+  margin-left: 3rem;
+}
+
+h2 {
+  background-color: #c8c8c8;
+  color: #323232;
+  font-size: 10rem;
+  font-family: poppins;
+  font-weight: 700;
+  margin-left: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+h1,
+h2 {
+  display: inline-flex;
+}
+
+text {
+  display: flex;
+  margin-top: -5rem;
+  margin-left: 5rem;
+  font-family: roboto;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+label,
+input,
+button,
+textarea {
+  display: flex;
+  margin-left: 3rem;
+}
+
+label {
+  font-family: poppins;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+input {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-family: roboto;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 1rem;
+  color: #9f4cc4;
+  font-weight: bold;
+  font-family: poppins;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 2px solid #9f4cc4;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #9f4cc4;
+  color: white;
+  transition-duration: 0.8s;
+  cursor: pointer;
+}
+
+textarea {
+  height: 5rem;
+  width: 20rem;
+  border: none;
+  resize: none;
+  border-radius: 5px;
+  background-color: #c8c8c8;
+  color: black;
+  font-family: roboto;
+  font-weight: bold;
+}
+
+.methods-title {
+  font-size: 2rem;
+  color: #9f4cc4;
+}
+
+.box {
+  margin-top: 10rem;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.boxOutside {
+  background-color: #161f1f;
+  padding: 1rem 0;
+}
