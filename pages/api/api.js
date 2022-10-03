@@ -24,14 +24,24 @@ function handler(req, res) {
   } else if (req.method === "DELETE") {
     body = null;
     body = req.body;
-    for (var i = 0; i < lista.length; i++) {
-      if (lista[i].id == body.id) {
-        lista.splice(i, 1);
-        res.status(200).json({ message: "Deletado!" });
-        break;
-      }
+    var retorno = calldelete(body.id);
+    if (retorno == "Deletado") {
+      res.status(200).json({ message: "Deletado!" });
+    } else {
+      res.status(400).json({ message: "Não encontrado!" });
     }
-    res.status(400).json({ message: "Não encontrado!" });
   }
 }
+
+function calldelete(id) {
+  for (var i = 0; i < lista.length; i++) {
+    console.log(i);
+    if (lista[i].id == id) {
+      lista.splice(i, 1);
+      return "Deletado";
+    }
+  }
+  return "Não Encontrado";
+}
+
 export default handler;
