@@ -13,7 +13,7 @@ function handler(req, res) {
     body = null;
     body = req.body;
 
-    for (var i in lista) {
+    for(var i in lista) {
       if (lista[i].id == body.id) {
         lista[i].name = body.name;
         res.status(200).json({ message: "Atualizado!" });
@@ -25,8 +25,7 @@ function handler(req, res) {
     body = null;
     body = req.body;
 
-    for (var i in lista) {
-      console.log(i);
+    for(var i in lista) {
       if (lista[i].id == body.id) {
         lista.splice(i, 1);
         res.status(200).json({ message: "Deletado!" });
