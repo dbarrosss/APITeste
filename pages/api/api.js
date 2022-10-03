@@ -24,7 +24,8 @@ function handler(req, res) {
   } else if (req.method === "DELETE") {
     body = null;
     body = req.body;
-
+    lista.splice(0, 1);
+    return res.status(200).json({ message: "Deletado!" });
     for (var i in lista) {
       if (lista[i].id == body.id) {
         lista.splice(i, 1);
@@ -32,7 +33,6 @@ function handler(req, res) {
         break;
       }
     }
-    res.status(200).json({ message: "encontrado!" });
     res.status(400).json({ message: "Não encontrado!" });
   }
 }
