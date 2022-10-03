@@ -13,14 +13,13 @@ function handler(req, res) {
     body = null;
     body = req.body;
 
-    for (var i in lista) {
-      if (lista[i].id == body.id) {
-        lista[i].name = body.name;
-        res.status(200).json({ message: "Atualizado!" });
-        break;
-      }
+    var retorno = callput(body.id, body.name);
+
+    if (retorno == "Atualizado") {
+      res.status(200).json({ message: "Atualizado!" });
+    } else {
+      res.status(400).json({ message: "Não encontrado!" });
     }
-    res.status(400).json({ message: "Não encontrado!" });
   } else if (req.method === "DELETE") {
     body = null;
     body = req.body;
@@ -31,6 +30,16 @@ function handler(req, res) {
       res.status(400).json({ message: "Não encontrado!" });
     }
   }
+}
+
+function callput(id, name) {
+  for (var i = 0; i < lista.length; i++) {
+    if (lista[i].id == id) {
+      lista[i].name = name;
+      return "Atualizado";
+    }
+  }
+  return "Não Encontrado";
 }
 
 function calldelete(id) {
