@@ -29,7 +29,6 @@ function handler(req, res) {
       if (lista[i].id == body.id) {
         lista.splice(i, 1);
         res.status(200).json({ message: "Deletado!" });
-        break;
       }
     }
     res.status(400).json({ message: "Não encontrado!" });
