@@ -95,7 +95,7 @@ const callpost = async (event) => {
 const callget = async (event) => {
   event.preventDefault();
   const res = await fetch("/api/api", {
-    header: {
+    headers: {
       "Content-type": "Application/Json",
     },
     method: "GET",
