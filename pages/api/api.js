@@ -24,9 +24,7 @@ function handler(req, res) {
   } else if (req.method === "DELETE") {
     body = null;
     body = req.body;
-    lista.splice(0, 1);
-    return res.status(200).json({ message: "Deletado!" });
-    for (var i in lista) {
+    for (var i = 0; i < lista.length; i++) {
       if (lista[i].id == body.id) {
         lista.splice(i, 1);
         res.status(200).json({ message: "Deletado!" });
